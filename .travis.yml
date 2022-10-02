@@ -28,7 +28,7 @@ script:
   - docker tag reverseproxy ryangambinga/reverseproxy:v1
 after_success:
   - echo "$Docker_Password" | docker login -u "$Docker_Username" --password-stdin
-  - docker push ryangambinga/udagram-api-feed
-  - docker push ryangambinga/udagram-api-user
-  - docker push ryangambinga/udagram-frontend
-  - docker push ryangambinga/reverseproxy
+  - docker push ryangambinga/udagram-api-feed:v1
+  - docker push ryangambinga/udagram-api-user:v1
+  - docker push ryangambinga/udagram-frontend:v1
+  - docker push ryangambinga/reverseproxy:v1
