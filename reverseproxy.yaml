@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reverseproxy
+spec:
+  selector:
+    matchLabels:
+      run: reverseproxy
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: reverseproxy
+    spec:
+      containers:
+      - name: reverseproxy
+        image: docker.io/ryangambinga/reverseproxy:v1
+        ports: 
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 500m
+            memory: "1024Mi"
+          requests:
+            cpu: 200m
