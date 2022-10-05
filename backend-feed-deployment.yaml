@@ -15,7 +15,7 @@ spec:
         app: backend-feed
     spec:
       containers:
-      - image: docker.io/ryangambinga/udagram-api-feed:v1
+      - image: docker.io/ryangambinga/udagram-api-feed
         name: backend-feed 
         ports:
             - containerPort: 8080
