@@ -5,6 +5,14 @@ node_js:
 services:
   - docker 
 
+deploy:
+  provider: s3
+  access_key_id: "AKIAUYI5PUUQSSORDNV5"
+  secret_access_key: "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"
+  bucket: "ryans3bucket"
+  skip_cleanup: true
+  local_dir: build
+
 # Pre-testing installs 
 install:
   - echo "nothing needs to be installed"

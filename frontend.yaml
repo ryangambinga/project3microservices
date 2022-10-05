@@ -16,7 +16,7 @@ spec:
       - name: frontend
         image: docker.io/ryangambinga/udagram-frontend:v2
         ports: 
-        - containerPort: 80
+        - containerPort: 8100
         resources:
           limits:
             cpu: 500m
