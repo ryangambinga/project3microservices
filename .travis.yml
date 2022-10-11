@@ -5,14 +5,6 @@ node_js:
 services:
   - docker 
 
-deploy:
-  provider: s3
-  access_key_id: "ASIAUAOXD6Q2SQWCNGIX"
-  secret_access_key: "mjWVTtt0GReHJ8F6KI3xR84Vx8gBr39KijwXqGVL"
-  bucket: "ryans3bucket"
-  skip_cleanup: true
-  local_dir: build
-
 # Pre-testing installs 
 install:
   - echo "nothing needs to be installed"
@@ -31,7 +23,7 @@ script:
   - docker tag udagram-api-feed ryangambinga/udagram-api-feed:v1
 
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend ryangambinga/udagram-frontend:v1
+  - docker tag udagram-frontend ryangambinga/udagram-frontend:local
 
   - docker build -t reverseproxy ./udagram-reverseproxy
   - docker tag reverseproxy ryangambinga/reverseproxy:v1
@@ -39,5 +31,5 @@ after_success:
   - echo "$Docker_Password" | docker login -u "$Docker_Username" --password-stdin
   - docker push ryangambinga/udagram-api-feed
   - docker push ryangambinga/udagram-api-user
-  - docker push ryangambinga/udagram-frontend
+  - docker push ryangambinga/udagram-frontend:local
   - docker push ryangambinga/reverseproxy
