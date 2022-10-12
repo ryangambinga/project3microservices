@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   appName: 'Ryan Udagram',
-  apiHost: 'http://localhost:8080/api/v0'
+  apiHost: 'http://a1df58fb28101478992bad7f79ab902a-1756719145.us-east-1.elb.amazonaws.com/api/v0'
 };
 
 /*
